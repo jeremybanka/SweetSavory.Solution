@@ -34,20 +34,12 @@ namespace SweetSavory
       services.Configure<IdentityOptions>(options =>
       {
         options.Password.RequireDigit = false;
-        options.Password.RequiredLength = 0;
+        options.Password.RequiredLength = 1;
         options.Password.RequireLowercase = false;
         options.Password.RequireNonAlphanumeric = false;
         options.Password.RequireUppercase = false;
         options.Password.RequiredUniqueChars = 0;
       });
-      // TODO - update auth based on roles
-      // services.AddControllers(config =>
-      // {
-      //   var policy = new AuthorizationPolicyBuilder()
-      //                     .RequireAuthenticatedUser()
-      //                     .Build();
-      //   config.Filters.Add(new AuthorizeFilter(policy));
-      // });
     }
     public void Configure(IApplicationBuilder app)
     {
