@@ -11,6 +11,7 @@ namespace SweetSavory.Models
       Flavorings = new HashSet<Flavoring>();
     }
     public string FlavorId { get; set; }
+    public string Name { get; set; }
     public virtual ICollection<Flavoring> Flavorings { get; }
   }
 }
