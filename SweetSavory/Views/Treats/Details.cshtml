@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+@using SweetSavory.Models
+@model SweetSavory.Models.Treat
+
+<h1>@Html.DisplayFor(model => model.Name)</h1>
+<h2>Treat</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>This treat's flavors</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (Flavoring f in Model.Flavorings)
+    {
+      <tr>
+        <td>@Html.ActionLink($"{@f.Flavor.Name}", "Details", "Flavors", new { id = f.Treat.TreatId})</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Delete", "Delete", new { id = Model.TreatId })</p>
+<p>@Html.ActionLink("Back", "Index")</p>

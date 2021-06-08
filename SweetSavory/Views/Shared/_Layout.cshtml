@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - Pierre's</title>
+  <link rel="stylesheet" href="~/styles/reset.css" />
+  <link rel="stylesheet" href="~/styles/trunk.css" />
+</head>
+
+<body>
+  <header>
+    <a>
+      <a asp-area="" asp-controller="Home" asp-action="Index">Pierre's Bakery</a>
+    </a>
+    <nav>
+      <ul>
+        <li>
+          <a asp-area="" asp-controller="Flavors" asp-action="Index">Flavors</a>
+        </li>
+        <li>
+          <a asp-area="" asp-controller="Treats" asp-action="Index">Treats</a>
+        </li>
+        <li>
+          <a asp-area="" asp-controller="Account" asp-action="Index">Account</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    @RenderBody()
+  </main>
+
+  <footer>
+    <div>@@ 2021 Pierre's Bakery. All rights reversed.</div>
+  </footer>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

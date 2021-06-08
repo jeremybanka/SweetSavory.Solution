@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+@model SweetSavory.Models.Flavor
+<h1>
+  Are you sure?
+</h1>
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Yes. Delete @Html.DisplayFor(model => model.Name)" />
+}
+@Html.ActionLink("No", "Details", new {id = Model.FlavorId})

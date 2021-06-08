@@ -1,0 +1,16 @@
+@{
+  ViewData["Title"] = "New Flavor";
+}
+
+@model SweetSavory.Models.Flavor;
+
+<h1>New Flavor</h1>
+<section>
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, null, new { @required="required"})
+
+    <input type="submit" value="Done" />
+  }
+</section>

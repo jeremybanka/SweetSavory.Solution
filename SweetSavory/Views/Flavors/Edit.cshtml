@@ -1,0 +1,44 @@
+@{
+  Layout = "_Layout";
+}
+@using SweetSavory.Models
+@model SweetSavory.Models.Flavor
+
+<h1>Edit Flavor</h1>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm(
+"Create",
+"Flavorings",
+new { FlavorId = Model.FlavorId, origin = ViewBag.Controller }
+))
+{
+  @Html.HiddenFor(model => model.FlavorId)
+  <input type="submit" value="Assign to Treat" />
+  @Html.DropDownList("TreatId")
+}
+<ul>
+  @foreach (Flavoring f in Model.Flavorings)
+  {
+    <li>
+      @using (Html.BeginForm(
+     "Delete",
+     "Licenses",
+     new { id = f.TreatId, origin = ViewBag.Controller }
+     ))
+      {
+        @f.Treat.Name
+        <input type="submit" value="x">
+      }
+    </li>
+  }
+</ul>
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name)
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Cancel", "Details", new { id = Model.FlavorId })</p>
