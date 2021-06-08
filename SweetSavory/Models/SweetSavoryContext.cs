@@ -7,7 +7,7 @@ namespace SweetSavory.Models
   {
     public virtual DbSet<Treat> Treats { get; set; }
     public virtual DbSet<Flavor> Flavors { get; set; }
-    public virtual DbSet<Flavoring> Flavoring { get; set; }
+    public virtual DbSet<Flavoring> Flavorings { get; set; }
     public SweetSavoryContext(DbContextOptions options) : base(options) { }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

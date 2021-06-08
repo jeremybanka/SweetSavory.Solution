@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SweetSavory.Models;
 
 namespace SweetSavory.Migrations
 {
     [DbContext(typeof(SweetSavoryContext))]
-    partial class SweetSavoryContextModelSnapshot : ModelSnapshot
+    [Migration("20210608070900_NamesForFlavorsAndTreats")]
+    partial class NamesForFlavorsAndTreats
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -175,7 +177,7 @@ namespace SweetSavory.Migrations
 
                     b.HasIndex("TreatId");
 
-                    b.ToTable("Flavorings");
+                    b.ToTable("Flavoring");
                 });
 
             modelBuilder.Entity("SweetSavory.Models.Treat", b =>
