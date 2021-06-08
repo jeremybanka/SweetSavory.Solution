@@ -27,6 +27,7 @@ namespace Library.Controllers
       _db = db;
     }
 
+    [AllowAnonymous]
     [HttpGet]
     public ActionResult Index() => View(AllTreats());
 
@@ -40,6 +41,7 @@ namespace Library.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     [HttpGet]
     public ActionResult Details(string id)
     {
